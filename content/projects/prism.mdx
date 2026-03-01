@@ -1,0 +1,30 @@
+---
+id: prism
+title: Prism
+slug: prism
+status: active
+tags: [typescript, ai, observability, event-driven]
+connections: [ddia, thinking-in-systems]
+dates:
+  created: 2025-09-01
+  updated: 2026-02-20
+description: Event-driven observability platform with AI-powered cognitive layer.
+---
+
+Prism is an observability platform built around event-driven architecture. The core insight is that most monitoring tools show you what happened, but very few help you understand *why* or predict *what's next*.
+
+## Architecture
+
+Monorepo with pnpm workspaces and Turborepo. Key packages:
+
+- **@prism/core** — shared types, Inngest client, Redis streams
+- **@prism/db** — Drizzle ORM schemas and queries
+- **@prism/observer** — embeddings and sentiment analysis pipeline
+- **@prism/cognitive** — memory formation, prediction services
+- **@prism/workers** — Inngest functions for async processing
+
+## Current focus
+
+The cognitive layer. Building systems that can form memories from event streams, detect anomalies through learned patterns, and surface predictions before issues become incidents.
+
+Using OpenAI embeddings for semantic similarity and Anthropic Claude for structured analysis. The challenge is latency — cognitive processing needs to feel instant to be useful.

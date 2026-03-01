@@ -1,0 +1,22 @@
+---
+id: thinking-in-systems
+title: Think in systems, not features
+slug: thinking-in-systems
+tags: [architecture, systems]
+connections: [prism, ddia, sapiens, thinking-fast-and-slow]
+revisedCount: 3
+dates:
+  created: 2024-04-20
+  updated: 2026-01-30
+description: Features are surface. Systems are structure. Optimise for the system.
+---
+
+A feature is what users see. A system is how things connect. Most engineering problems are system problems disguised as feature requests.
+
+"Add a notification" is a feature. The questions behind it are system questions: How does state propagate? What are the failure modes? How does this interact with existing event flows? What happens at scale?
+
+Thinking in systems means asking about feedback loops, boundaries, and emergent behaviour before asking about implementation details.
+
+Revised multiple times as this principle keeps proving itself. Most recently in Prism's cognitive layer — the prediction service only became useful when I stopped thinking about it as a feature and started thinking about it as a feedback loop in the system.
+
+Question the frame before you build the feature.

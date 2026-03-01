@@ -1,0 +1,16 @@
+---
+id: event-sourcing-realisation
+title: Event sourcing changes how you think about state
+slug: event-sourcing-realisation
+tags: [architecture, event-driven]
+connections: [prism, ddia]
+dates:
+  created: 2026-01-15
+description: The shift from "what is the state" to "what happened" changes everything downstream.
+---
+
+Spent the last week rebuilding Prism's core data model around event sourcing. The mental shift is significant: instead of asking "what is the current state?" you ask "what sequence of events led here?"
+
+This isn't just an implementation detail. It changes how you design APIs, how you think about debugging, and how you approach features like undo, audit trails, and temporal queries. The log *is* the database. Everything else is a derived view.
+
+The cost is complexity in projections and eventual consistency. Worth it for observability where understanding *how* you got to a state matters more than the state itself.

@@ -1,0 +1,27 @@
+---
+id: this-website
+title: This Website
+slug: this-website
+status: active
+tags: [typescript, nextjs, d3, writing]
+connections: [write-to-think, prism]
+dates:
+  created: 2026-02-25
+  updated: 2026-02-28
+description: Personal site as a living knowledge graph.
+---
+
+This site. Built with Next.js 15, Tailwind, D3.js for the graph, and Velite for content management.
+
+## Why a graph?
+
+Most personal sites are either portfolios (static, performative) or blogs (chronological, disconnected). Neither reflects how thinking actually works — ideas connect laterally, projects inform principles, books reshape how you build things.
+
+The knowledge graph on the homepage makes those connections visible and navigable. It's a map of how things relate, not just a list of what exists.
+
+## Technical choices
+
+- **D3 force simulation** for organic node positioning
+- **Velite** for build-time MDX processing with Zod schemas
+- **Motion** for UI animations
+- SVG over Canvas — ~20 nodes doesn't need Canvas performance

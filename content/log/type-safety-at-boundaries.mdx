@@ -1,0 +1,16 @@
+---
+id: type-safety-at-boundaries
+title: Type safety at the boundaries
+slug: type-safety-at-boundaries
+tags: [typescript, architecture]
+connections: [prism, ddia]
+dates:
+  created: 2026-01-28
+description: Runtime validation at system edges, static types everywhere else.
+---
+
+A pattern that's working well in Prism: Zod schemas at every system boundary (API endpoints, event handlers, database results), TypeScript types inferred from those schemas everywhere else.
+
+You get runtime safety where data enters your system and compile-time safety for everything internal. No duplicate type definitions. The Zod schema is the single source of truth.
+
+Velite uses the same approach for content — define the schema once, get typed imports everywhere. It's a good pattern.

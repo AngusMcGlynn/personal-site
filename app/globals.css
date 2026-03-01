@@ -1,26 +1,66 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@plugin "@tailwindcss/typography";
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg: #0A0A0A;
+  --color-accent: #A3B18A;
+  --color-foreground: rgba(255, 255, 255, 0.87);
+  --color-heading: rgba(255, 255, 255, 1);
+  --color-secondary: rgba(255, 255, 255, 0.5);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: var(--font-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background: var(--color-bg);
+  color: var(--color-foreground);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans), ui-sans-serif, sans-serif;
+  color: var(--color-heading);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+/* Prose customization */
+.prose {
+  --tw-prose-body: rgba(255, 255, 255, 0.87);
+  --tw-prose-headings: rgba(255, 255, 255, 1);
+  --tw-prose-links: var(--color-accent);
+  --tw-prose-bold: rgba(255, 255, 255, 0.95);
+  --tw-prose-code: rgba(255, 255, 255, 0.87);
+  --tw-prose-quotes: rgba(255, 255, 255, 0.7);
+  --tw-prose-quote-borders: var(--color-accent);
+  --tw-prose-counters: rgba(255, 255, 255, 0.5);
+  --tw-prose-bullets: rgba(255, 255, 255, 0.3);
+  --tw-prose-hr: rgba(255, 255, 255, 0.1);
+  --tw-prose-pre-bg: rgba(255, 255, 255, 0.05);
+  --tw-prose-pre-code: rgba(255, 255, 255, 0.87);
+}
+
+.prose a {
+  text-decoration-color: rgba(163, 177, 138, 0.3);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s;
+}
+
+.prose a:hover {
+  text-decoration-color: rgba(163, 177, 138, 0.7);
+}
+
+.prose hr {
+  border: none;
+}
+
+.prose code {
+  font-family: var(--font-mono), ui-monospace, monospace;
 }

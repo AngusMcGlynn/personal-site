@@ -1,0 +1,16 @@
+---
+id: on-monorepos
+title: Monorepos are about boundaries, not convenience
+slug: on-monorepos
+tags: [architecture, developer-tools]
+connections: [prism, refract]
+dates:
+  created: 2025-12-03
+description: The real value of a monorepo is making package boundaries explicit.
+---
+
+People frame the monorepo debate as "convenience vs complexity." That misses the point. The real value is that a monorepo forces you to define explicit boundaries between packages while keeping them in sync.
+
+In Prism, `@prism/db` can't accidentally depend on `@prism/workers`. The dependency graph is visible, enforced, and versioned together. You get the modularity of separate packages with the coordination of a single repository.
+
+The tooling cost is real — Turborepo, workspace configuration, build orchestration. But the clarity of explicit boundaries pays for itself quickly on any project beyond trivial.

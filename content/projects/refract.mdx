@@ -1,0 +1,22 @@
+---
+id: refract
+title: Refract
+slug: refract
+status: paused
+tags: [typescript, cli, developer-tools]
+connections: [prism, ship-small]
+dates:
+  created: 2025-06-15
+  updated: 2025-11-01
+description: CLI tool for decomposing large PRs into reviewable chunks.
+---
+
+Refract analyses a git diff and suggests how to break it into smaller, logically coherent pull requests. The idea came from watching too many 800-line PRs sit unreviewed for days.
+
+## How it works
+
+1. Parses the diff into a dependency graph of changed files
+2. Identifies clusters of related changes
+3. Suggests an ordering that minimises conflicts between the split PRs
+
+Paused because Prism is consuming all available time. The core algorithm works but the UX needs significant polish before it's useful to anyone else.
