@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import { ContentForm } from "@/components/admin/ContentForm";
+import { DeleteButton } from "@/components/admin/DeleteButton";
 import { getFieldDefs, parseMDX, frontmatterToFormValues } from "@/lib/admin/mdx";
 import { getFile, type ContentType } from "@/lib/admin/github";
-import { updateEntryAction, deleteEntryAction } from "@/lib/actions/admin";
+import { updateEntryAction } from "@/lib/actions/admin";
 
 const VALID_TYPES = ["projects", "log", "library", "principles", "now"] as const;
 const LABELS: Record<string, string> = {
@@ -49,21 +50,7 @@ export default async function EditEntryPage({
         </h1>
 
         {type !== "now" && (
-          <form action={deleteEntryAction}>
-            <input type="hidden" name="path" value={file.path} />
-            <input type="hidden" name="sha" value={file.sha} />
-            <button
-              type="submit"
-              className="text-sm text-red-400 hover:text-red-300 transition-colors"
-              onClick={(e) => {
-                if (!confirm("Delete this entry? This commits a deletion to GitHub.")) {
-                  e.preventDefault();
-                }
-              }}
-            >
-              Delete
-            </button>
-          </form>
+          <DeleteButton path={file.path} sha={file.sha} />
         )}
       </div>
 

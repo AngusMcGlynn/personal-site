@@ -22,7 +22,7 @@ export default function AdminDashboardLayout({
             Admin
           </Link>
           <nav className="flex gap-4">
-            {CONTENT_TYPES.map(({ type, label }) => (
+            {CONTENT_TYPES.filter(({ type }) => type !== "now").map(({ type, label }) => (
               <Link
                 key={type}
                 href={`/admin/${type}/new`}
