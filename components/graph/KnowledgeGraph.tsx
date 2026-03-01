@@ -114,7 +114,7 @@ export function KnowledgeGraph({ data }: Props) {
       .text((d) => d.label)
       .attr("fill", "rgba(255, 255, 255, 0.87)")
       .attr("font-size", "12px")
-      .attr("font-family", "var(--font-geist-sans), sans-serif")
+      .attr("font-family", "var(--font-sans), sans-serif")
       .attr("text-anchor", "middle")
       .attr("dy", -16)
       .attr("pointer-events", "none");

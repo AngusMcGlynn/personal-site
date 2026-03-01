@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  --color-bg: #0A0A0A;
+  --color-bg: #000000;
   --color-accent: #A3B18A;
   --color-foreground: rgba(255, 255, 255, 0.87);
   --color-heading: rgba(255, 255, 255, 1);
@@ -17,12 +17,11 @@ html {
 }
 
 body {
-  font-family: var(--font-mono), ui-monospace, monospace;
+  font-family: var(--font-sans), ui-sans-serif, sans-serif;
   min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans), ui-sans-serif, sans-serif;
   color: var(--color-heading);
 }
 
